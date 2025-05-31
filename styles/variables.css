@@ -1,1 +1,40 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+
+:root {
+  --themes-background: #FFFFFF; /* задаёт фон страницы*/
+  --themes-main-color: #000000;
+  --page-background: url("../images/4dd65e8c77a1749122eb9020559ad46f35cd3193.png"); /* Фоновая Картинка  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  --page-background-color-main:#E7E7E7; /* Фоновая Картинка */
+  --page-background-color-secondary:#1A1A1A; /* Фоновая Картинка */
+
+  --text-main-font-family: "Inter Regular", monospace; /* основной шрифт, изменён sans-serif на monospace */
+  --text-accent-font-family: "Press Start 2P", monospace; /* основной шрифт, изменён sans-serif на monospace */
+  --themes-shadow-color: #000000;
+  --title-font-weight: 700; /* толщину начертания заголовков */
+  --text-font-weight: 400; /* толщину начертания шрифта текста карточек */
+
+  --text-size: 1.125rem; /* Размер шрифта */
+  --text-line-height: 21px; /* высота строки текста */
+
+  --section-width: clamp(375px, 100%, 700px); /* Ширина секций */
+
+  --site-title-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem); /* размер  шрифта заголовка */
+  --site-аnnotation-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem); 
+  --site-button-text-size: 14px;
+  --site-title-line-height: 100%; /* высота строки заголовка */
+  --site-padding: 25px; /* устанавливает основные отступы между элементами !!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+  --
+
+  /* устанавливает основные отступы между элементами*/
+
+  --site-title-color: #db00ff; /* цвет заголовков шапки и подвала */
+  --button-text-color: #ff0070; /* цвет текста кнопок отличается в темах от цвета границы */
+  --button-border-color: #ff0070; /* цвет границы кнопок отличается в темах от текста кнопок */
+  --button-border-color-hover: #ff007066; /* цвет границы кнопки при наведении */
+  --section-title-color: #ff0070; /* цвет заголовков секций */
+  --accent-color: #ff0070; /* фон заголовков карточек и теней*/
+  --text-color: #f1b2ce; /* цвет основного текста */
+  --title-color: #000028; /* цвет заголовков карточек и аннотации*/
+}

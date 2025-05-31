@@ -9,8 +9,282 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+html {
+  height: 100%;
+}
 
-.page {
+.page {    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--text-main-font-family, monospace);
+  font-variation-settings: 'wght' var(--text-font-weight);
+  background-color: var(--themes-background, #FFFFFF); /* Заменить при вёрстке     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  background-image: var(--page-background, "../images/4dd65e8c77a1749122eb9020559ad46f35cd3193.png");
+  /* background-size: cover; заменить при вёрстке     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  background-position: center;
+  background-repeat: repeat; /* Заменить при вёрстке     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  background-attachment: fixed;
+  height: inherit;
+  font-size: var(--text-size, 1.125rem);
+  line-height: var(--text-line-height, 21px);
 }
+
+/* 
+@supports (font-variation-settings: normal) {
+	.page {
+		font-family: var(--text-main-font-family);
+	}
+}*/
+
+.section-width {
+    max-width: var(--section-width, 100%);
+}
+
+.header {
+  width: 100%;
+  font-family: var(--text-accent-font-family, monospace);
+  margin: 100px 0;
+  padding: 120px 0;
+  text-transform: uppercase;
+  background-color: var(--themes-background, #FFFFFF); 
+  text-align: center;
+  border: 2px solid var(--themes-main-color, #000000);
+}
+/* 
+.header__card {
+  margin: 100px 0;
+  padding: 120px 0;
+  min-width: var(--section-width, 100%);
+  text-transform: uppercase;
+  background-color: #FFFFFF ; 
+  text-align: center;
+} */
+
+
+.header__title {
+  font-size: var(--site-title-size, 49px);
+  line-height: var(--site-title-line-height, 100%);
+  font-weight: var(--text-font-weight, 400);
+  padding-bottom: 20px;
+
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.header__аnnotation {
+  font-size: var(--site-аnnotation-size, 14px); 
+  line-height: var(--site-title-line-height, 100%);
+}
+
+
+.card { /* */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--themes-background, #FFFFFF); 
+  border: 2px solid var(--themes-main-color, #000000);
+}
+
+.card_label {
+  position: absolute;
+  top: 21px;
+  right: 11px;
+  opacity: 0.5;
+  text-shadow: 1px 1px 3px var(--themes-shadow-color, #000000);
+  font-size: var(--site-button-text-size, 14px);
+  font-weight: var(--text-font-weight, 400);
+  font-family: var(--text-accent-font-family, monospace);
+  mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px var(--themes-background, #FFFFFF)) {
+  .card_label {
+    -webkit-text-stroke: 1px var(--themes-background, #FFFFFF);
+    text-shadow: none;
+  }
+}
+
+.card__title-accent {
+  padding: 5px 10px 5px;
+  text-wrap: balance;
+}
+
+.card__title { /* */
+  border-bottom: 2px solid var(--themes-main-color, #000000);
+  font-family: var(--text-main-font-family, monospace);
+  font-variation-settings: 'wght' var(--title-font-weight, 700);
+  font-size: var(--text-size, 1.125rem);
+    /*    line-height: var(--site-title-line-height, 100%);
+          lex-shrink: 0 */
+}
+
+.card__image { /* */
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__image-shell {
+  display: flex;
+  position: relative;
+}
+
+.card__section-text { /* */
+  display: grid;
+  gap: 25px;
+  border-top: 2px solid var(--themes-main-color, #000000);
+  padding: 25px;
+  font-family: var(--text-main-font-family, monospace);
+
+}
+
+.card__section-text-paragraph {
+    display: grid; 
+    gap: 27px;
+}
+
+.card__section-text-button{
+  display: flex; 
+  justify-content: flex-end; 
+}
+
+.like-icon { /*  — для svg-иконки анимированного сердца */
+  height: 38px;
+  object-fit: cover;
+}
+
+.card__like-button { /* — для кнопки Like рядом с иконкой */
+  min-width: 130px;
+  min-height: 38px;
+  background-color: var(--page-background);
+  border: 2px solid var(--themes-main-color, #000000);
+} 
+
+.card__icon-button { /* — для кнопки, оборачивающей иконку */
+    border: 2px solid var(--themes-background, #FFFFFF);
+    background-color: var(--page-background);
+    height: 38px;
+}
+
+.is-liked { /* — для обозначения состояния лайкнутой иконки в виде сердца */
+
+}
+
+.button__text { /* — для обозначения текстового элемента внутри кнопки */
+  font-family: var(--text-accent-font-family, monospace);
+  font-variation-settings: 'wght' var(--text-font-weight, 400);
+  font-size: var(--site-button-text-size, 14px);
+}
+
+
+
+.footer {
+  display: block;
+  flex-shrink: 0;
+  inline-size: 306px;
+  block-size: 84px;
+  margin: 50px 35px 100px;
+  font-family: var(--text-accent-font-family, monospace);
+  text-transform: uppercase;
+  background-color: var(--themes-background, #FFFFFF); 
+
+}
+
+.button_block {
+  width: 100%;
+  padding: 0px; 
+
+  padding-bottom: 15px;
+
+  height: 100%;
+  width: 100%;
+}
+
+
+.floppy {
+  color: #000000;
+  display: block;
+  margin: 0 auto;
+  inline-size: 28px;
+  block-size: 28px;
+  margin-top: 14px;
+  flex-shrink: 0;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+} 
+
+.dialog[open] {
+    display: flex;
+    inline-size: 341px;
+    block-size: 191px;
+    gap: 30px;
+    padding: 30px;
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.dialog_shell {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dialog_floppy {
+  inline-size: 39px;
+  block-size: 39px;
+  flex-shrink: 0;
+}
+
+.dialog_text {
+  font-family: var(--text-accent-font-family, monospace);
+  font-variation-settings: 'wght' var(--text-font-weight, 400);
+  font-size: var(--site-button-text-size, 14px);
+  line-height: 150%;
+  text-transform: uppercase;
+
+}
+
+ .dialog_button  {
+    font-family: var(--text-accent-font-family, monospace);
+    font-variation-settings: 'wght' var(--text-font-weight, 400);
+    font-size: var(--site-button-text-size, 14px);
+    border: 2px solid var(--Themes-mainColor, #000000);
+    height: 100%;
+}
+
+@media (min-width: 1440px) {
+    @media (orientation: landscape) {
+        body {
+        background-color: #000;
+      }
+    }
+}
+
+/*
+ .heart {
+    transition: fill 0.3s linear;
+  }
+  .like-icon:hover .heart {
+    fill: var(--contour-color);
+    transition: fill 0.3s linear;
+
+    fill: black;
+    transition: 0.3s linear;
+  }
+  
+  
+  
+  */
