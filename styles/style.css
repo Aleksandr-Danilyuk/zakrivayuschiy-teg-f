@@ -137,6 +137,7 @@ html {
 .card__section-text-button {
   display: flex;
   justify-content: flex-end;
+  gap: 4px;
 }
 
 .like-icon {
@@ -145,18 +146,23 @@ html {
   object-fit: cover;
 }
 
-.card__like-button {
-  /* — для кнопки Like рядом с иконкой */
-  min-width: 130px;
-  min-height: 38px;
+.button_action {
   background-color: var(--page-background);
+  font-size: var(--site-button-text-size, 14px);
+  font-family: var(--text-accent-font-family, monospace);
   border: 2px solid var(--themes-main-color, #000000);
+  font-variation-settings: "wght" var(--text-font-weight, 400);
+}
+
+.card__like-button {
+  min-width: 130px;
 }
 
 .card__icon-button {
   /* — для кнопки, оборачивающей иконку */
   border: 2px solid var(--themes-background, #ffffff);
   background-color: var(--page-background);
+  padding: 0;
   height: 38px;
 }
 
@@ -176,7 +182,7 @@ html {
   flex-shrink: 0;
   inline-size: 306px;
   margin-bottom: 100px;
- /*  block-size: 84px;
+  /*  block-size: 84px;
   — margin: 50px 35px 100px; */
   font-family: var(--text-accent-font-family, monospace);
   text-transform: uppercase;
@@ -184,10 +190,8 @@ html {
 }
 
 .button_block {
-  width: 100%;
-  /* padding: 0px; */
   padding-bottom: 15px;
-  height: 100%;
+  width: 100%;
 }
 
 .floppy {
@@ -206,7 +210,7 @@ dialog::backdrop {
 .dialog[open] {
   display: flex;
   inline-size: 341px;
- /* block-size: 191px; */
+  /* block-size: 191px; */
   gap: 30px;
   padding: 30px;
   margin: auto;
@@ -238,10 +242,6 @@ dialog::backdrop {
 }
 
 .dialog_button {
-  font-family: var(--text-accent-font-family, monospace);
-  font-variation-settings: "wght" var(--text-font-weight, 400);
-  font-size: var(--site-button-text-size, 14px);
-  border: 2px solid var(--Themes-mainColor, #000000);
   line-height: 33px;
 }
 
@@ -260,7 +260,7 @@ dialog::backdrop {
     .result_form {
       display: flex;
       inline-size: 335px;
-     /* block-size: 55px; */
+      /* block-size: 55px; */
       margin: 0px auto 100px;
       border: 2px solid var(--Themes-mainColor, #000000);
     }
@@ -277,28 +277,15 @@ dialog::backdrop {
   }
 }
 
-.button_action 
-.card__like-button,
-.dialog_button,
-.button_block {
+.button_action {
   transition: box-shadow 0.3s ease;
 }
 
-.dialog_button:hover {
+.button_action:hover {
   box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
 }
 
-.button_block:hover {
-  box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
-}
-
-.card__like-button:hover {
-  box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
-}
-
-.card__like-button,
-.dialog_button,
-.button_block {
+.button_action {
   position: relative;
   overflow: hidden; /* Скрываем выходящий за границы контент */
 }
@@ -309,8 +296,7 @@ dialog::backdrop {
   z-index: 1;
 }
 
-.button_block::before,
-.card__like-button::before {
+.button_action::before {
   content: "";
   position: absolute;
   top: 0;
@@ -323,8 +309,7 @@ dialog::backdrop {
   transition: transform 0.5s ease-in-out; /* Плавность перехода */
 }
 
-.button_block:hover::before,
-.card__like-button:hover::before {
+.button_action:hover::before {
   transform: translateX(0);
 }
 
@@ -346,7 +331,7 @@ dialog::backdrop {
 }
 
 .card__icon:focus-visible {
-  border: 2px solid var(--Themes-mainColor); /* Цвет акцентной рамки */
+  border: 2px solid var(--Themes-mainColor);
 }
 
 .main-body,
@@ -354,11 +339,12 @@ dialog::backdrop {
   --heart-fill-colorvar: rgba(255, 255, 255, 0);
 }
 .core {
-  fill: var(--heart-fill-colorvar) /* начальное значение цвета */;
+  fill: var(--heart-fill-colorvar)
+    /* Согласно ТЗ https://disk.yandex.ru/i/e_Hgq1PGx5udtA */;
   transition: fill 0.5s ease-in-out;
 }
 .main-body {
-  fill: var(--heart-fill-colorvar) /* начальное значение цвета */;
+  fill: var(--heart-fill-colorvar);
   transition: fill 0.3s ease-in-out;
 }
 
@@ -383,9 +369,7 @@ svg:active .core {
   transition: fill 0.3s ease-in-out;
 }
 
-/*  
-  */
-
+/*
 @keyframes scaleheart {
   from {
     transform: scale(1);
@@ -406,6 +390,7 @@ svg:active .core {
     fill: none;
   }
 }
+  */
 
 .heart {
   animation: scaleheart 0.3s ease-in 0.1s 1;

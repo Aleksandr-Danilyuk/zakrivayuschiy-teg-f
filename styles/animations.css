@@ -9,3 +9,23 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+@keyframes scaleheart {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparkleheart {
+  from {
+    fill: #ff000000;
+  }
+  50% {
+    fill: #ff0000ff;
+  }
+  to {
+    fill: none;
+  }
+}
