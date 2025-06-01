@@ -166,10 +166,6 @@ html {
   height: 38px;
 }
 
-.is-liked {
-  /* — для обозначения состояния лайкнутой иконки в виде сердца */
-}
-
 .button__text {
   /* — для обозначения текстового элемента внутри кнопки */
   font-family: var(--text-accent-font-family, monospace);
