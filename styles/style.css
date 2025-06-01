@@ -142,6 +142,7 @@ html {
 
 .like-icon {
   /*  — для svg-иконки анимированного сердца */
+  --heart-fill-colorvar: rgba(255, 255, 255, 0);
   height: 38px;
   object-fit: cover;
 }
@@ -171,9 +172,13 @@ html {
 
 .button__text {
   /* — для обозначения текстового элемента внутри кнопки */
+  position: relative;
+  color: #fff;
   font-family: var(--text-accent-font-family, monospace);
   font-variation-settings: "wght" var(--text-font-weight, 400);
   font-size: var(--site-button-text-size, 14px);
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 
 .result_form {
@@ -247,6 +252,78 @@ dialog::backdrop {
   line-height: 33px;
 }
 
+.button_action:hover {
+  box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
+}
+
+.button_action::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: var(--Themes-mainColor, #000000); /* Цвет псевдоэлемента */
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out; /* Плавность перехода */
+}
+
+.button_action:hover::before {
+  transform: translateX(0);
+}
+
+.card__icon {
+  border: 2px solid rgba(255, 255, 255, 0); /* Убираем стандартную границу */
+  transition: border 0.3s ease; /* Плавность появления границы */
+}
+
+.card__icon:focus-visible {
+  border: 2px solid var(--Themes-mainColor);
+}
+
+.core {
+  fill: var(--heart-fill-colorvar)
+    /* Согласно ТЗ https://disk.yandex.ru/i/e_Hgq1PGx5udtA */;
+  transition: fill 0.5s ease-in-out;
+}
+
+.main-body {
+  --heart-fill-colorvar: rgba(255, 255, 255, 0);
+  fill: var(--heart-fill-colorvar);
+  transition: fill 0.3s ease-in-out;
+
+}
+
+svg:hover .main-body,
+svg:hover .core {
+  fill: var(--contour-color);
+}
+
+svg:active .main-body,
+svg:active .core {
+  fill: var(--heart-fill-color);
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .contour {
+  fill: var(--heart-fill-color);
+}
+
+.like-icon.is-liked .heart {
+  animation: scaleheart 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: scaleheart 0.3s ease-in 0.1s 1;
+  fill: #ff0000;
+  transition: fill 0.3s ease-in-out;
+  animation: sparkleheart 0.3s ease-in 0.3s 1;
+  fill: #ff000000;
+  transition: fill 0.31s linear;
+}
+
 @media (min-width: 1440px) {
   @media (orientation: landscape) {
     .header {
@@ -279,112 +356,3 @@ dialog::backdrop {
     }
   }
 }
-
-.button_action:hover {
-  box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
-}
-
-.button__text {
-  position: relative;
-  z-index: 1;
-}
-
-.button_action::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-color: var(--Themes-mainColor, #000000); /* Цвет псевдоэлемента */
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out; /* Плавность перехода */
-}
-
-.button_action:hover::before {
-  transform: translateX(0);
-}
-
-.button__text {
-  position: relative;
-  color: #fff;
-  mix-blend-mode: difference;
-}
-
-.card__icon {
-  border: 2px solid rgba(255, 255, 255, 0); /* Убираем стандартную границу */
-  transition: border 0.3s ease; /* Плавность появления границы */
-}
-
-.card__icon:focus-visible {
-  border: 2px solid var(--Themes-mainColor);
-}
-
-.main-body,
-.like-icon {
-  --heart-fill-colorvar: rgba(255, 255, 255, 0);
-}
-.core {
-  fill: var(--heart-fill-colorvar)
-    /* Согласно ТЗ https://disk.yandex.ru/i/e_Hgq1PGx5udtA */;
-  transition: fill 0.5s ease-in-out;
-}
-.main-body {
-  fill: var(--heart-fill-colorvar);
-  transition: fill 0.3s ease-in-out;
-}
-
-svg:hover .main-body,
-svg:hover .core {
-  fill: var(--contour-color);
-}
-
-svg:active .main-body,
-svg:active .core {
-  fill: var(--heart-fill-color);
-}
-
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body,
-.like-icon.is-liked .contour {
-  fill: var(--heart-fill-color);
-}
-
-
-/*
-@keyframes scaleheart {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes sparkleheart {
-  from {
-    fill: #ff000000;
-  }
-  50% {
-    fill: #ff0000ff;
-  }
-  to {
-    fill: none;
-  }
-}
-  */
-
-.like-icon.is-liked .heart {
-  animation: scaleheart 0.3s ease-in 0.1s 1;
-}
-
-.like-icon.is-liked .sparks {
-  animation: scaleheart 0.3s ease-in 0.1s 1;
-  fill: #ff0000;
-  transition: fill 0.3s ease-in-out;
-  animation: sparkleheart 0.3s ease-in 0.3s 1;
-  fill: #ff000000;
-  transition: fill 0.31s linear;
-}
-
