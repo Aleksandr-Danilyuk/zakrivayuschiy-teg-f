@@ -384,7 +384,8 @@ svg:active .core {
 }
   */
 
-.heart {
+.like-icon.is-liked .heart,
+.like-icon.is-liked .sparks {
   animation: scaleheart 0.3s ease-in 0.1s 1;
 }
 
