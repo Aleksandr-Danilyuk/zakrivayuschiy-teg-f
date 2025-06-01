@@ -360,10 +360,6 @@ svg:active .core {
   fill: var(--heart-fill-color);
 }
 
-.like-icon.is-liked .sparks {
-  fill: #ff0000;
-  transition: fill 0.3s ease-in-out;
-}
 
 /*
 @keyframes scaleheart {
@@ -393,10 +389,15 @@ svg:active .core {
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparkleheart 1s ease-in 1s 1;
+  fill: #ff0000;
+  transition: fill 0.3s ease-in-out;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparkleheart 0.3s ease-in 0.3s 1;
 }
 
 .like-icon.is-liked .sparks {
   fill: #ff000000;
-  transition: fill 2s ease-in-out;
+  transition: fill 0.31s linear;
 }
