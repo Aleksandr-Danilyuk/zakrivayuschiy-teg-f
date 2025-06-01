@@ -154,7 +154,7 @@ html {
   border: 2px solid var(--themes-main-color, #000000);
   font-variation-settings: "wght" var(--text-font-weight, 400);
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
 
@@ -292,7 +292,6 @@ dialog::backdrop {
   --heart-fill-colorvar: rgba(255, 255, 255, 0);
   fill: var(--heart-fill-colorvar);
   transition: fill 0.3s ease-in-out;
-
 }
 
 svg:hover .main-body,
@@ -322,6 +321,34 @@ svg:active .core {
   animation: sparkleheart 0.3s ease-in 0.3s 1;
   fill: #ff000000;
   transition: fill 0.31s linear;
+}
+
+.image__decoration-contrast {
+  filter: contrast(99%);
+}
+
+.image__decoration-blur {
+  filter: blur(0.01rem);
+}
+
+.image__decoration-opacity {
+  filter: opacity(0.9);
+}
+
+.image__decoration-grayscale {
+  filter: grayscale(0.1);
+}
+
+.image__decoration-hue-rotate {
+  filter: hue-rotate(1deg);
+}
+
+.image__decoration-sepia {
+  filter: sepia(1%);
+}
+
+.image__decoration-invert {
+  filter: invert(0.1);
 }
 
 @media (min-width: 1440px) {
