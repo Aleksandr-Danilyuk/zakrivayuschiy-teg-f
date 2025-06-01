@@ -152,6 +152,9 @@ html {
   font-family: var(--text-accent-font-family, monospace);
   border: 2px solid var(--themes-main-color, #000000);
   font-variation-settings: "wght" var(--text-font-weight, 400);
+  position: relative;
+  overflow: hidden; 
+  transition: box-shadow 0.3s ease;
 }
 
 .card__like-button {
@@ -191,12 +194,15 @@ html {
 }
 
 .floppy {
-  color: #000000;
+  position: relative;
+  color: #fff;
   display: block;
   margin: 15px auto 8px;
   inline-size: 28px;
   block-size: 28px;
   flex-shrink: 0;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 
 dialog::backdrop {
@@ -266,6 +272,7 @@ dialog::backdrop {
       align-items: center;
       padding: 0px;
     }
+
     .floppy {
       margin: 10px 8px 9px 15px;
       width: 21px;
@@ -273,20 +280,10 @@ dialog::backdrop {
   }
 }
 
-.button_action {
-  transition: box-shadow 0.3s ease;
-}
-
 .button_action:hover {
   box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
 }
 
-.button_action {
-  position: relative;
-  overflow: hidden; /* Скрываем выходящий за границы контент */
-}
-
-.floppy,
 .button__text {
   position: relative;
   z-index: 1;
@@ -310,12 +307,6 @@ dialog::backdrop {
 }
 
 .button__text {
-  position: relative;
-  color: #fff;
-  mix-blend-mode: difference;
-}
-
-.floppy {
   position: relative;
   color: #fff;
   mix-blend-mode: difference;
@@ -384,21 +375,16 @@ svg:active .core {
 }
   */
 
-.like-icon.is-liked .heart,
-.like-icon.is-liked .sparks {
+.like-icon.is-liked .heart {
   animation: scaleheart 0.3s ease-in 0.1s 1;
 }
 
 .like-icon.is-liked .sparks {
+  animation: scaleheart 0.3s ease-in 0.1s 1;
   fill: #ff0000;
   transition: fill 0.3s ease-in-out;
-}
-
-.like-icon.is-liked .sparks {
   animation: sparkleheart 0.3s ease-in 0.3s 1;
-}
-
-.like-icon.is-liked .sparks {
   fill: #ff000000;
   transition: fill 0.31s linear;
 }
+
