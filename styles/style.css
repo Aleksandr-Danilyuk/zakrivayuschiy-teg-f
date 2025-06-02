@@ -223,7 +223,7 @@ html {
 .result_form {
   display: block;
   flex-shrink: 0;
-  inline-size: 306px;
+  inline-size: 310px;
   margin-bottom: 100px;
   /*  block-size: 84px;
   — margin: 50px 35px 100px; */
@@ -324,6 +324,7 @@ svg:active .core {
 }
 
 .like-icon.is-liked .sparks {
+  transform-origin: center;
   animation: scaleheart 0.3s ease-in 0.1s 1;
   fill: #ff0000;
   transition: fill 0.3s ease-in-out;
