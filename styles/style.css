@@ -195,9 +195,9 @@ html {
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--themes-main-color);
-  outline:  2px solid var(--themes-background, #ffffff00);
+  outline: 2px solid var(--themes-background, #ffffff00);
   outline-offset: -1;
-} 
+}
 
 /*
 .card__icon {
