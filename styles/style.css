@@ -291,20 +291,25 @@ dialog::backdrop {
   line-height: 33px;
 }
 
-.core {
-  fill: var(--heart-fill-colorvar)
-    /* Согласно ТЗ https://disk.yandex.ru/i/e_Hgq1PGx5udtA */;
-  transition: fill 0.5s ease-in-out;
+svg:hover .core {
+  transition: fill 0.3s ease-in;
+}
+
+svg:not(:hover) .core {
+  transition: fill 0.3s ease-in 0.03s;
 }
 
 .main-body {
-  --heart-fill-colorvar: rgba(255, 255, 255, 0);
   fill: var(--heart-fill-colorvar);
-  transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out 0.05s;
 }
 
-svg:hover .main-body,
-svg:hover .core {
+svg:not(:hover) .main-body {
+  transition: fill 0.3s ease-in;
+}
+
+svg:hover .core,
+svg:hover .main-body {
   fill: var(--contour-color);
 }
 
@@ -313,24 +318,27 @@ svg:active .core {
   fill: var(--heart-fill-color);
 }
 
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body,
+.like-icon.is-liked .core {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s ease-in;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s ease-in-out 0.05s;
+}
+
 .like-icon.is-liked .contour {
   fill: var(--heart-fill-color);
+  transition: fill 0.3s ease-in 0.06s;
 }
 
 .like-icon.is-liked .heart {
-  animation: scaleheart 0.3s ease-in 0.1s 1;
+  animation: scaleheart 0.3s ease-in 0.1s;
 }
 
 .like-icon.is-liked .sparks {
-  transform-origin: center;
-  animation: scaleheart 0.3s ease-in 0.1s 1;
-  fill: #ff0000;
-  transition: fill 0.3s ease-in-out;
   animation: sparkleheart 0.3s ease-in 0.3s 1;
-  fill: #ff000000;
-  transition: fill 0.31s linear;
 }
 
 .image__decoration-contrast {

@@ -19,13 +19,10 @@
 }
 
 @keyframes sparkleheart {
-  from {
-    fill: #ff000000;
+  0% {
+    fill: var(--heart-fill-color);
   }
-  50% {
-    fill: #ff0000ff;
-  }
-  to {
-    fill: none;
+  100% {
+    fill: var(--heart-fill-colorvar);
   }
 }
