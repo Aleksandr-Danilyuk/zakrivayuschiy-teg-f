@@ -21,10 +21,7 @@ html {
   min-block-size: 100dvb;
   font-family: var(--text-main-font-family, monospace);
   font-variation-settings: "wght" var(--text-font-weight, 400);
-  background-color: var(
-    --themes-background,
-    #ffffff
-  ); 
+  background-color: var(--themes-background, #ffffff);
   background-image: var(
     --page-background,
     repeating-linear-gradient(0deg, #d3d3d3, #d3d3d300 2px)
@@ -194,7 +191,7 @@ html {
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--themes-main-color,  #000000);
+  border: 2px solid var(--themes-main-color, #000000);
   outline: 2px solid var(--themes-background, #ffffff00);
   outline-offset: -1;
 }
