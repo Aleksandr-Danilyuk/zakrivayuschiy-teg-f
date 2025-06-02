@@ -3,15 +3,31 @@
 :root {
   --themes-background: #ffffff; /* задаёт фон страницы*/
   --themes-main-color: #000000;
-  /* --page-background: url("../images/4dd65e8c77a1749122eb9020559ad46f35cd3193.png"); /* Фоновая Картинка  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  /* --page-background: url("../images/4dd65e8c77a1749122eb9020559ad46f35cd3193.png"); /* Фоновая Картинка  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   --page-background: repeating-linear-gradient(0deg, #d3d3d3, #d3d3d300 2px),
     repeating-linear-gradient(90deg, #d3d3d3, #d3d3d300 2px),
-    linear-gradient(0deg, #e7e7e7, #1a1a1a);
+    linear-gradient(0deg, #e7e7e7, #1a1a1a);*/
+  --page-background: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+
   --page-background-color-main: #e7e7e7; /* Фоновая Картинка */
   --page-background-color-secondary: #1a1a1a; /* Фоновая Картинка */
 
   --text-main-font-family: "Inter Regular", monospace; /* основной шрифт, изменён sans-serif на monospace */
-  --text-accent-font-family: "Press Start 2P", monospace; /* основной шрифт, изменён sans-serif на monospace */
+  --text-accent-font-family: "Press Start 2P", fantasy; /* основной шрифт, изменён sans-serif на monospace */
   --themes-shadow-color: #000000;
   --title-font-weight: 700; /* толщину начертания заголовков */
   --text-font-weight: 400; /* толщину начертания шрифта текста карточек */
