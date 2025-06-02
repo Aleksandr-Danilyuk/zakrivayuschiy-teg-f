@@ -20,11 +20,11 @@ html {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--text-main-font-family, monospace);
-  font-variation-settings: "wght" var(--text-font-weight);
+  font-variation-settings: "wght" var(--text-font-weight, 400);
   background-color: var(
     --themes-background,
     #ffffff
-  ); /* Заменить при вёрстке     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  ); 
   background-image: var(
     --page-background,
     repeating-linear-gradient(0deg, #d3d3d3, #d3d3d300 2px)
@@ -43,7 +43,7 @@ html {
 
 .header {
   width: var(--section-width, 100%);
-  font-family: var(--text-accent-font-family, monospace);
+  font-family: var(--text-accent-font-family, fantasy);
   margin: 100px 0;
   padding: 120px 0;
   text-transform: uppercase;
@@ -86,7 +86,7 @@ html {
   text-shadow: 1px 1px 3px var(--themes-shadow-color, #000000);
   font-size: var(--site-button-text-size, 14px);
   font-weight: var(--text-font-weight, 400);
-  font-family: var(--text-accent-font-family, monospace);
+  font-family: var(--text-accent-font-family, fantasy);
   mix-blend-mode: hard-light;
 }
 
@@ -139,17 +139,17 @@ html {
   justify-content: flex-end;
   gap: 4px;
 }
-
+/*
 .like-icon {
-  /*  — для svg-иконки анимированного сердца */
-  --heart-fill-colorvar: rgba(255, 255, 255, 0);
+    — для svg-иконки анимированного сердца 
+  --heart-fill-colorvar: rgba(255, 255, 255, 0)
   object-fit: cover;
-}
+}*/
 
 .button_action {
-  background-color: var(--page-background);
+  background-color: var(--page-background, #00000000);
   font-size: var(--site-button-text-size, 14px);
-  font-family: var(--text-accent-font-family, monospace);
+  font-family: var(--text-accent-font-family, fantasy);
   border: 2px solid var(--themes-main-color, #000000);
   font-variation-settings: "wght" var(--text-font-weight, 400);
   position: relative;
@@ -187,14 +187,14 @@ html {
   /* — для кнопки, оборачивающей иконку */
   box-sizing: border-box;
   border: 2px solid var(--themes-background, #ffffff00);
-  background-color: var(--page-background);
+  background-color: var(--page-background, #00000000);
   padding: 0;
   height: 38px;
   transition: border 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--themes-main-color);
+  border: 2px solid var(--themes-main-color,  #000000);
   outline: 2px solid var(--themes-background, #ffffff00);
   outline-offset: -1;
 }
@@ -213,7 +213,7 @@ html {
   /* — для обозначения текстового элемента внутри кнопки */
   position: relative;
   color: #fff;
-  font-family: var(--text-accent-font-family, monospace);
+  font-family: var(--text-accent-font-family, fantasy);
   font-variation-settings: "wght" var(--text-font-weight, 400);
   font-size: var(--site-button-text-size, 14px);
   z-index: 1;
@@ -227,7 +227,7 @@ html {
   margin-bottom: 100px;
   /*  block-size: 84px;
   — margin: 50px 35px 100px; */
-  font-family: var(--text-accent-font-family, monospace);
+  font-family: var(--text-accent-font-family, fantasy);
   text-transform: uppercase;
   background-color: var(--themes-background, #ffffff);
 }
@@ -280,7 +280,7 @@ dialog::backdrop {
 }
 
 .dialog_text {
-  font-family: var(--text-accent-font-family, monospace);
+  font-family: var(--text-accent-font-family, fantasy);
   font-variation-settings: "wght" var(--text-font-weight, 400);
   font-size: var(--site-button-text-size, 14px);
   line-height: 150%;
@@ -300,7 +300,7 @@ svg:not(:hover) .core {
 }
 
 .main-body {
-  fill: var(--heart-fill-colorvar);
+  fill: var(--heart-fill-colorvar, #ff000000);
   transition: fill 0.3s ease-in-out 0.05s;
 }
 
@@ -310,26 +310,26 @@ svg:not(:hover) .main-body {
 
 svg:hover .core,
 svg:hover .main-body {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #000000);
 }
 
 svg:active .main-body,
 svg:active .core {
-  fill: var(--heart-fill-color);
+  fill: var(--heart-fill-color, #ff0000);
 }
 
 .like-icon.is-liked .core {
-  fill: var(--heart-fill-color);
+  fill: var(--heart-fill-color, #ff0000);
   transition: fill 0.3s ease-in;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--heart-fill-color);
+  fill: var(--heart-fill-color, #ff0000);
   transition: fill 0.3s ease-in-out 0.05s;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--heart-fill-color);
+  fill: var(--heart-fill-color, #ff0000);
   transition: fill 0.3s ease-in 0.06s;
 }
 
@@ -384,7 +384,7 @@ svg:active .core {
 
     .result_form {
       display: flex;
-      inline-size: 335px;
+      inline-size: 337px;
       /* block-size: 55px; */
       margin: 0px auto 100px;
       border: 2px solid var(--Themes-mainColor, #000000);
