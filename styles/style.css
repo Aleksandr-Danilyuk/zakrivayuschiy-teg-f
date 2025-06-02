@@ -343,7 +343,7 @@ svg:active .core {
 }
 
 .image__decoration-contrast {
-  filter: contrast(99%);
+  filter: contrast(99%) brightness(101%);
 }
 
 .image__decoration-blur {
