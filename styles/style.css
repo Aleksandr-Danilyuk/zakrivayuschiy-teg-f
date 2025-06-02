@@ -143,7 +143,6 @@ html {
 .like-icon {
   /*  — для svg-иконки анимированного сердца */
   --heart-fill-colorvar: rgba(255, 255, 255, 0);
-  height: 38px;
   object-fit: cover;
 }
 
@@ -158,17 +157,57 @@ html {
   transition: box-shadow 0.3s ease;
 }
 
+.button_action:focus-visible {
+  outline: var(--themes-main-color, #000000);
+  box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
+}
+
+.button_action::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: var(--Themes-mainColor, #000000); /* Цвет псевдоэлемента */
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out; /* Плавность перехода */
+}
+
+.button_action:hover::before {
+  transform: translateX(0);
+}
+
 .card__like-button {
   min-width: 130px;
 }
 
 .card__icon-button {
   /* — для кнопки, оборачивающей иконку */
-  border: 2px solid var(--themes-background, #ffffff);
+  box-sizing: border-box;
+  border: 2px solid var(--themes-background, #ffffff00);
   background-color: var(--page-background);
   padding: 0;
   height: 38px;
+  transition: border 0.3s ease;
 }
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--themes-main-color);
+  outline:  2px solid var(--themes-background, #ffffff00);
+  outline-offset: -1;
+} 
+
+/*
+.card__icon {
+  border: 2px solid rgba(255, 255, 255, 0); 
+  transition: border 0.3s ease; 
+}
+
+.card__icon:focus-visible {
+  border: 2px solid var(--Themes-mainColor);
+} */
 
 .button__text {
   /* — для обозначения текстового элемента внутри кнопки */
@@ -250,36 +289,6 @@ dialog::backdrop {
 
 .dialog_button {
   line-height: 33px;
-}
-
-.button_action:hover {
-  box-shadow: 2px 2px 0px var(--Themes-mainColor, #000000);
-}
-
-.button_action::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-color: var(--Themes-mainColor, #000000); /* Цвет псевдоэлемента */
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out; /* Плавность перехода */
-}
-
-.button_action:hover::before {
-  transform: translateX(0);
-}
-
-.card__icon {
-  border: 2px solid rgba(255, 255, 255, 0); /* Убираем стандартную границу */
-  transition: border 0.3s ease; /* Плавность появления границы */
-}
-
-.card__icon:focus-visible {
-  border: 2px solid var(--Themes-mainColor);
 }
 
 .core {
