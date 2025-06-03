@@ -232,6 +232,7 @@ html {
 .button_block {
   padding-bottom: 15px;
   width: 100%;
+  border: transparent;
 }
 
 .floppy {
