@@ -1,7 +1,10 @@
-https://aleksandr-danilyuk.github.io/zakrivayuschiy-teg-f/
+https://github.com/Aleksandr-Danilyuk/zakrivayuschiy-teg-f.git
 
 # Спринт 4. Проектная работа «Закрывающий тег»
 ## Проектная работа посвящена работе с графикой и декорированию элементов.
   В проекте реализована работа с векторной графикой, градиентами, фильтрами и трансформацией элементов. 
 ## Используется подход Mobile first и элементы адаптиной вёрстки
+
+Работа опубликована:
+https://aleksandr-danilyuk.github.io/zakrivayuschiy-teg-f/
 
